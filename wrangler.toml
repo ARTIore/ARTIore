@@ -1,0 +1,5 @@
+# Cloudflare Pages. Static files come from dist/; Pages Functions live in /functions.
+# This file does not attach artiore.com. Custom domains are a separate dashboard step.
+name = "artiore"
+compatibility_date = "2026-10-21"
+pages_build_output_dir = "dist"

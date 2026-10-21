@@ -1,0 +1,91 @@
+---
+import Base from "../layouts/Base.astro";
+import { FIVE_PART } from "../data/site.js";
+
+const title = "ARTIore API Docs — Integrate Structured Reasoning";
+const description =
+  "How to call ARTIore's reasoning endpoint: Clarity Mode or Executive Mode, the five-part JSON response, validation, and rate limits.";
+---
+
+<Base title={title} description={description} path="/api-documentation">
+  <article class="prose">
+    <h1>API documentation</h1>
+    <p>
+      ARTIore offers two reasoning modes. Executive Mode is the shorter synthesis for someone who has to choose. Clarity Mode is the fuller plain-language pass. Both return the same five parts.
+    </p>
+    <p>{FIVE_PART}</p>
+    <p>
+      An older draft of this page, which the previous host did not serve (it returned 404), described different JSON fields. The contract below is the one <a href="/try">/try</a> uses, and the one the previous live endpoint returned.
+    </p>
+
+    <h2>POST /api/artiore/analyze</h2>
+    <p>Send JSON. The response is JSON. Nothing is stored.</p>
+    <pre><code>{`{
+  "question": "Should I wait or decide this week?",
+  "mode": "clarity"
+}`}</code></pre>
+    <ul>
+      <li><code>question</code> — required string, 1 to 2,000 characters after trimming.</li>
+      <li><code>mode</code> — required. Exactly <code>clarity</code> or <code>executive</code>.</li>
+    </ul>
+    <p>A successful response:</p>
+    <pre><code>{`{
+  "mode": "clarity",
+  "evidence": "What the message itself establishes.",
+  "assumptions": "What is being treated as true without confirmation.",
+  "tradeoffs": "The real costs of the paths in view.",
+  "nextSteps": [
+    "One practical option.",
+    "Another practical option."
+  ],
+  "limits": "What this analysis cannot decide.",
+  "confidenceLevel": "Medium"
+}`}</code></pre>
+    <p><code>confidenceLevel</code> is <code>High</code>, <code>Medium</code>, or <code>Low</code>.</p>
+
+    <h2>Errors</h2>
+    <ul>
+      <li><code>400</code> — <code>{`{"error":"A question is required."}`}</code></li>
+      <li><code>400</code> — <code>{`{"error":"Mode must be either \\"executive\\" or \\"clarity\\"."}`}</code></li>
+      <li><code>400</code> — question longer than 2,000 characters.</li>
+      <li><code>429</code> — too many requests from the same IP. Basic limit: 8 requests in 10 minutes, per server instance.</li>
+      <li><code>502</code> — the model call failed or returned an unusable shape.</li>
+      <li><code>503</code> — the server has no <code>OPENAI_API_KEY</code> and no upstream fallback.</li>
+    </ul>
+
+    <h2>GET /api/health</h2>
+    <pre><code>{`{ "status": "ok", "timestamp": "…", "message": "Hello World!" }`}</code></pre>
+
+    <h2>How the modes are framed</h2>
+    <p>These are the operating notes recovered from the previous API page. They describe tone. They do not change the JSON shape.</p>
+    <h3>Executive Mode</h3>
+    <p>Strategic positioning, optionality, and disciplined execution.</p>
+    <ul>
+      <li>Identity is fluid. Equity is built.</li>
+      <li>Power is quiet. Influence compounds.</li>
+      <li>Art is an asset class of perception.</li>
+      <li>Execution over inspiration.</li>
+      <li>Distribution over perfection.</li>
+    </ul>
+    <p>Operating notes: speak with precision, no emotional leakage, psychological control, long-horizon thinking, strategic optionality. The decision filter asks whether a path increases leverage, optionality, or authority. If not — decline.</p>
+    <h3>Clarity Mode</h3>
+    <p>A human-first pass aimed at reducing the suffering that comes from complexity. Plain language. The person keeps the decision.</p>
+    <ul>
+      <li>Reduce suffering from complexity</li>
+      <li>Increase human agency</li>
+      <li>Surface hidden choices</li>
+      <li>Intellectual honesty</li>
+      <li>Practical utility</li>
+    </ul>
+    <p>Under stress, simplify. When the stakes are high, add detail. When the question is unclear, clarify without interrogating. Always reduce cognitive load.</p>
+    <blockquote>
+      <p>“You exist to reduce suffering caused by information overload, decision paralysis, and unclear tradeoffs. You are a thinking partner, not a replacement for human judgment.”</p>
+    </blockquote>
+
+    <h2>Access requests</h2>
+    <p>
+      The previous page documented <code>POST /api/access/request</code>. This rebuild does not store access requests. Email <a href="mailto:contact@artiore.com">contact@artiore.com</a>. See <a href="/access">Request access</a>.
+    </p>
+    <p>The key that calls OpenAI stays in the host's secret store. It is not in the browser and not in this repository.</p>
+  </article>
+</Base>

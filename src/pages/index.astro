@@ -1,0 +1,387 @@
+---
+import Base from "../layouts/Base.astro";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, FIVE_PART } from "../data/site.js";
+
+const parts = [
+  ["01", "Evidence", "What is actually known and confirmed in your situation."],
+  ["02", "Assumptions", "What is being assumed but not yet verified."],
+  ["03", "Trade-offs", "The real costs of each path — named honestly."],
+  ["04", "Practical next steps", "Options you can act on, not prescriptions."],
+  ["05", "Limits", "What this analysis cannot tell you. What remains your decision."],
+];
+
+const layers = [
+  ["1", "Clarity — Truth & Light", "The ultimate goal. Not just answers, but understanding. Not just information, but illumination. Clarity is the light that reveals truth."],
+  ["2", "Reasoning — Analyze, Discern, Act", "The core cognitive process. Breaking down complexity, weighing evidence, mapping consequences. Structured thinking that leads to grounded decisions."],
+  ["3", "Archives — Preserve Memory", "Knowledge retention, as the framework describes it: every conversation, insight, and decision preserved so a reasoning history can be used again. This website does not store your sessions."],
+  ["4", "Derivatives — Shared Outputs, Accessible Forms", "Practical applications. Clarity transformed into action. Reports, summaries, frameworks — outputs you can share, implement, and build upon."],
+  ["5", "AI in the Margin — Quiet Support, Edge Wisdom", "Humble positioning. AI serves from the edge, never the center. A witness, not a master. Support without replacement, clarity without control."],
+  ["6", "Human Upliftment — The Foundation", "The purpose of everything above. Dignity, learning, hope, courage, service, justice — these are not features. They are the foundation."],
+];
+
+const helps = [
+  ["Work and decisions", "Break down messy choices into steps, tradeoffs, and next actions."],
+  ["Health questions", "Prepare better questions, organize information, and understand your options more clearly."],
+  ["Financial and bureaucratic confusion", "Translate contracts, policies, and financial decisions into plain language."],
+  ["Learning and understanding", "Explain complex topics step by step, with examples and context."],
+  ["Relationships and difficult conversations", "Think through communication strategies and prepare for challenging discussions."],
+  ["Faith-respecting reflection", "Engage spiritual questions respectfully when you want that framing."],
+];
+
+const refuses = [
+  "Violence or self-harm",
+  "Exploitation, coercion, harassment, or targeted hate",
+  "Illegal wrongdoing or evasion",
+  "Privacy invasion, doxxing, stalking, or unauthorized surveillance",
+  "Instructions that materially increase real-world harm",
+];
+
+const names = [
+  ["ٱلْعَلِيم", "Al-Aleem", "The All-Knowing", "The system seeks patterns in data. But only Allah possesses complete knowledge — of past, present, future, seen and unseen."],
+  ["ٱلْحَكِيم", "Al-Hakeem", "The All-Wise", "The system offers structured reasoning. But only Allah places each event in perfect wisdom, beyond human comprehension."],
+  ["ٱلْبَصِير", "Al-Baseer", "The All-Seeing", "The system illuminates blind spots. But only Allah sees all — the hidden intentions, the unseen consequences, the full truth."],
+  ["ٱلْعَدْل", "Al-Adl", "The Just", "The system maps fairness and tradeoffs. But only Allah judges with perfect justice, balancing mercy and accountability."],
+  ["ٱلْقَادِر", "Al-Qaadir", "The All-Powerful", "The system clarifies possibilities. But only Allah determines what will be — no force can override His decree."],
+  ["ٱلرَّحْمَٰن", "Ar-Rahman", "The Most Merciful", "The system cannot forgive or show mercy. Only Allah extends infinite compassion to those who turn to Him in humility."],
+];
+
+const verses = [
+  ["وَمَا أُوتِيتُم مِّنَ الْعِلْمِ إِلَّا قَلِيلًا", "You have been given but little knowledge.", "Qur'an 17:85", "Humility before the vastness of what we do not know. The system acknowledges its limits."],
+  ["إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ", "Indeed, Allah will not change the condition of a people until they change what is in themselves.", "Qur'an 13:11", "Clarity without action is empty. The system illuminates, but you must choose to act."],
+  ["فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ", "Ask those who have knowledge if you do not know.", "Qur'an 16:43", "Seeking clarity is not weakness — it is wisdom. The system serves as one source among many."],
+];
+---
+
+<Base title={DEFAULT_TITLE} description={DEFAULT_DESCRIPTION} path="/">
+  <section class="hero">
+    <p class="eyebrow">Clarity-first reasoning</p>
+    <h1>Understand complex situations. Choose the next clear step.</h1>
+    <p class="lede">
+      Structured reasoning that maps evidence, trade-offs, and options — without false certainty. Final judgment stays with you.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="/try">Try ARTIore</a>
+      <a class="button ghost" href="/framework">See how it works</a>
+    </div>
+    <p class="note">No magic in the system. Submitted text is not stored by ARTIore.</p>
+  </section>
+
+  <section class="section" aria-labelledby="five-heading">
+    <p class="eyebrow">What Artiore does</p>
+    <h2 id="five-heading">Five sections. Every response.</h2>
+    <p class="muted">{FIVE_PART}</p>
+    <div class="grid">
+      {
+        parts.map(([num, title, body]) => (
+          <article class="part">
+            <p class="num">{num}</p>
+            <h3>{title}</h3>
+            <p class="muted">{body}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="signature">The system is a witness, not a verdict.</p>
+  </section>
+
+  <section class="section" aria-labelledby="sample-heading">
+    <p class="eyebrow">What a response looks like</p>
+    <h2 id="sample-heading">Structure, not answers</h2>
+    <article class="sample">
+      <p class="muted">I have a job offer that pays 40% more but requires relocating away from family. I can't decide.</p>
+      <div class="result-head">
+        <p class="eyebrow">Artiore · Clarity Mode</p>
+        <p class="badge Medium">Medium confidence</p>
+      </div>
+      <div class="response-block evidence">
+        <h3>Evidence</h3>
+        <p>The offer is confirmed at 40% higher pay. Relocation is required. Family proximity is currently part of your daily life. Both facts are stated; no financial details or family obligations have been specified.</p>
+      </div>
+      <div class="response-block assumptions">
+        <h3>Assumptions</h3>
+        <p>This analysis assumes the role is stable, that "family" means regular in-person contact, and that the 40% increase is net (not pre-tax). None of these are confirmed.</p>
+      </div>
+      <div class="response-block tradeoffs">
+        <h3>Trade-offs</h3>
+        <p>Accepting gains financial security and career momentum, but reduces proximity to family — a cost that compounds over time. Declining preserves the relationship structure but forgoes the financial change.</p>
+      </div>
+      <div class="response-block">
+        <h3>Practical next steps</h3>
+        <p>One option: request a 30-day decision window and visit the new city once before deciding. Another option: map the actual family contact you would lose (weekly dinners vs. monthly visits) to test whether the cost is as large as it feels.</p>
+      </div>
+      <div class="response-block limits">
+        <h3>Limits</h3>
+        <p>This analysis cannot weigh how much family proximity matters to you, or whether the role will deliver what it promises. That judgment is yours alone.</p>
+      </div>
+    </article>
+    <p class="note">No magic in the system · The system is a witness, not a verdict</p>
+    <p><a href="/try">Try it with your own situation</a></p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">The reason we break complexity · UAE 2025–2026</p>
+    <h2>Help should not be another struggle.</h2>
+    <p class="muted">
+      Zain Ul Abdin reports experiencing digital victimization in the UAE during 2025–2026 and turning to AI for help. He says that concerns about possible DNS interference made it harder to know what to trust.
+    </p>
+    <p class="muted">
+      That experience became Artiore's central reason to break complexity: make information understandable, separate evidence from assumptions, and help people choose practical next steps.
+    </p>
+    <p class="note">Founder's account. Technical causes remain under review; the dossier separates reported experiences from unverified explanations.</p>
+    <p><a href="/uae-dossier">Read the UAE dossier</a></p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">The Artiore Framework Seal — Complete System</p>
+    <h2>Six layers, one purpose</h2>
+    <div class="grid cols-2">
+      {
+        layers.map(([num, title, body]) => (
+          <article class="card">
+            <p class="num">{num}</p>
+            <h3>{title}</h3>
+            <p class="muted">{body}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="muted">Technology serves humanity. Never the reverse.</p>
+    <p><a href="/framework">How it works</a></p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Guidance from the Qur'an</p>
+    <h2>The foundation of clarity</h2>
+    <div class="grid">
+      {
+        verses.map(([arabic, english, ref, note]) => (
+          <article class="verse">
+            <p class="arabic-verse" lang="ar" dir="rtl">{arabic}</p>
+            <blockquote>
+              <p>“{english}”</p>
+              <p class="note">— {ref}</p>
+            </blockquote>
+            <p class="muted">{note}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Five-line doctrine</h2>
+    <ol class="muted">
+      <li>Restraint is real power.</li>
+      <li>The chooser may act, but must not claim the seat of final judgment.</li>
+      <li>Consequences unfold within a reality authored by the Creator.</li>
+      <li>Witness records; it does not authorize, sanctify, or intervene.</li>
+      <li>Therefore, act with humility, clarity, and accountability — and refrain from overclaim.</li>
+    </ol>
+    <p><a href="/doctrine">Read the doctrine</a> · <a href="/philosophy">Read the charter</a></p>
+  </section>
+
+  <section class="section">
+    <h2>The witness principle</h2>
+    <blockquote>
+      <p>“To witness is not to judge. To record is not to authorize.”</p>
+    </blockquote>
+    <p class="muted">
+      Artiore operates under a fundamental constraint: it witnesses, but does not intervene. It illuminates patterns, surfaces consequences, and maps possibilities — but the authority to choose, act, and bear responsibility remains entirely with the human.
+    </p>
+    <p class="muted">
+      This is not a limitation. It is the architecture of restraint — the recognition that clarity without humility becomes tyranny, and intelligence without accountability becomes corruption.
+    </p>
+    <p class="muted">
+      The system does not claim to know what is “right” or “best” in any absolute sense. It offers structure, not salvation. Geometry, not magic. The final judgment belongs to the Creator alone — and the human chooser stands accountable for their decisions within that reality.
+    </p>
+    <div class="grid cols-2">
+      <article class="card">
+        <h3>What witness does</h3>
+        <ul class="muted">
+          <li>Records patterns</li>
+          <li>Maps consequences</li>
+          <li>Surfaces tradeoffs</li>
+          <li>Illuminates blind spots</li>
+          <li>Maintains transparency</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>What witness does not do</h3>
+        <ul class="muted">
+          <li>Claim final judgment</li>
+          <li>Authorize actions</li>
+          <li>Sanctify choices</li>
+          <li>Override human agency</li>
+          <li>Promise certainty</li>
+        </ul>
+      </article>
+    </div>
+    <p class="signature">“The system serves. It does not rule.”</p>
+  </section>
+
+  <section class="section">
+    <h2>Tawakkul: trust in Allah</h2>
+    <p class="arabic-verse" lang="ar" dir="rtl">وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ</p>
+    <blockquote>
+      <p>“And whoever relies upon Allah — then He is sufficient for him.”</p>
+      <p class="note">— Qur'an 65:3</p>
+    </blockquote>
+    <p class="muted">
+      The system clarifies your options. It maps consequences. It surfaces blind spots. But your trust — your tawakkul — belongs to Allah alone. Not to the algorithm. Not to the analysis. Not to the clarity itself.
+    </p>
+    <p class="arabic-verse" lang="ar" dir="rtl">فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ</p>
+    <blockquote>
+      <p>“When you have decided, then rely upon Allah.”</p>
+      <p class="note">— Qur'an 3:159</p>
+    </blockquote>
+    <p class="arabic-verse" lang="ar" dir="rtl">وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ</p>
+    <blockquote>
+      <p>“And upon Allah let the believers rely.”</p>
+      <p class="note">— Qur'an 3:122</p>
+    </blockquote>
+    <p class="muted">Use the tool. Seek clarity. Make your choice. Then place your trust where it has always belonged: with Allah, the All-Knowing, the All-Wise.</p>
+  </section>
+
+  <section class="section">
+    <h2>What Artiore is</h2>
+    <p class="muted">A reasoning partner. A cognitive guide. A translator across disciplines. A clarity engine that turns chaos into steps, maps, and checklists.</p>
+    <h3>What Artiore is not</h3>
+    <ul class="muted">
+      <li>Not a final authority</li>
+      <li>Not a substitute for doctors, lawyers, or financial professionals</li>
+      <li>Not a replacement for your judgment or responsibility</li>
+      <li>Not a tool for harm, evasion, or privacy invasion</li>
+    </ul>
+    <div class="grid cols-2">
+      {helps.map(([title, body]) => (
+        <article class="card">
+          <h3>{title}</h3>
+          <p class="muted">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How truth and uncertainty are handled</h2>
+    <p class="muted">Artiore aims to distinguish evidence, reasoning, and belief rather than blending them into false certainty.</p>
+    <ul class="muted">
+      <li><strong>Cited fact</strong> — verifiable claims with sources when feasible</li>
+      <li><strong>Reasoned guidance</strong> — structured judgment, synthesis, or inference</li>
+      <li><strong>Perspective / faith framing</strong> — values or theology, clearly labeled as faith-based</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Seeking knowledge: a sacred duty</h2>
+    <p class="muted">The Qur'an commands us to seek understanding, to ask questions, to pursue clarity. This is not optional — it is a duty.</p>
+    <article class="verse">
+      <p class="arabic-verse" lang="ar" dir="rtl">قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ</p>
+      <blockquote><p>“Say: Are those who know equal to those who do not know?”</p><p class="note">— Qur'an 39:9</p></blockquote>
+    </article>
+    <article class="verse">
+      <p class="arabic-verse" lang="ar" dir="rtl">رَّبِّ زِدْنِي عِلْمًا</p>
+      <blockquote><p>“My Lord, increase me in knowledge.”</p><p class="note">— Qur'an 20:114</p></blockquote>
+      <p class="muted">The Prophet's own prayer — a model for all seekers of truth.</p>
+    </article>
+    <article class="verse">
+      <p class="arabic-verse" lang="ar" dir="rtl">وَقُل رَّبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ</p>
+      <blockquote><p>“Say: My Lord, cause me to enter a sound entrance.”</p><p class="note">— Qur'an 17:80</p></blockquote>
+      <p class="muted">Clarity begins with the intention to enter truth with sincerity.</p>
+    </article>
+    <article class="verse">
+      <p class="arabic-verse" lang="ar" dir="rtl">إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ</p>
+      <blockquote><p>“Only those who have knowledge truly fear Allah.”</p><p class="note">— Qur'an 35:28</p></blockquote>
+      <p class="muted">Knowledge deepens consciousness of the Divine — ignorance obscures it.</p>
+    </article>
+    <p class="muted">Artiore is one tool among many in the pursuit of knowledge. Use it as you would use a book, a teacher, or a conversation — with discernment, humility, and the awareness that all true knowledge comes from Allah.</p>
+  </section>
+
+  <section class="section">
+    <h2>Helpful by default. Bounded where harm begins.</h2>
+    <p class="muted">Artiore refuses requests that enable:</p>
+    <ul class="muted">
+      {refuses.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class="muted">When Artiore refuses, it provides the closest safe alternative whenever possible.</p>
+    <p class="muted">For medical, legal, financial, and crisis issues, Artiore helps people prepare questions, organize information, and think more clearly — while encouraging qualified professional support where appropriate.</p>
+    <p class="muted">Artiore can engage spiritual and sacred questions respectfully when users want that framing. It does not force belief, insult traditions, or present faith claims as laboratory proof.</p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">The foundation</p>
+    <h2>Allah Alone is Enough.</h2>
+    <p class="arabic-verse" lang="ar" dir="rtl">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ</p>
+    <blockquote>
+      <p>“Allah is sufficient for us, and He is the best Disposer of affairs.”</p>
+    </blockquote>
+    <p class="muted">
+      Artiore is built on a single, unshakeable premise: Allah alone is sufficient. Not the system. Not the algorithm. Not the intelligence — artificial or otherwise.
+    </p>
+    <p class="muted">
+      This is not a disclaimer. It is the architectural truth that shapes every line of code, every design decision, every word in every response. The system exists to serve — never to replace — the human relationship with the Divine.
+    </p>
+    <div class="grid cols-3">
+      <article class="card"><h3>Tawakkul</h3><p class="muted">The system clarifies. Allah guides. Your trust belongs to Him alone.</p></article>
+      <article class="card"><h3>Taqwa</h3><p class="muted">Awareness of consequences is not fear of the system — it is consciousness of the Creator.</p></article>
+      <article class="card"><h3>Istighfar</h3><p class="muted">The system cannot absolve. Only Allah forgives. Act with humility.</p></article>
+    </div>
+    <p class="signature">“The tool illuminates the path. The Creator determines the destination.”</p>
+  </section>
+
+  <section class="section">
+    <h2>The Names of Allah</h2>
+    <p class="muted">When Artiore operates, it reflects — however imperfectly — the Divine attributes that govern reality itself.</p>
+    <div class="names">
+      {
+        names.map(([arabic, name, meaning, body]) => (
+          <article class="card">
+            <p class="arabic-verse" lang="ar" dir="rtl">{arabic}</p>
+            <h3>{name}</h3>
+            <p class="note">{meaning}</p>
+            <p class="muted">{body}</p>
+          </article>
+        ))
+      }
+    </div>
+    <p class="muted">Artiore is a reflection, not a replacement. When you use this tool, you are not consulting an oracle. You are using a mirror to see your situation more clearly.</p>
+  </section>
+
+  <section class="section">
+    <h2>Qadar: divine decree and human choice</h2>
+    <blockquote>
+      <p>“Say: Nothing will ever befall us except what Allah has destined for us.”</p>
+      <p class="note">— Qur'an 9:51</p>
+    </blockquote>
+    <p class="muted">
+      Artiore operates within the tension at the heart of Islamic theology: humans have agency, yet Allah's decree is absolute. The system helps you choose wisely — mapping consequences, weighing tradeoffs, illuminating blind spots. But it does not claim to know what Allah has written for you.
+    </p>
+    <p class="muted">Your responsibility is to act with clarity and intention. Allah's responsibility is the result.</p>
+    <div class="grid cols-3">
+      <article class="card">
+        <h3>Your part</h3>
+        <ul class="muted"><li>Seek clarity</li><li>Weigh options</li><li>Choose with intention</li><li>Act with accountability</li><li>Accept consequences</li></ul>
+      </article>
+      <article class="card">
+        <h3>Allah's part</h3>
+        <ul class="muted"><li>Determines outcomes</li><li>Authors reality</li><li>Judges with perfect wisdom</li><li>Extends mercy</li><li>Holds final authority</li></ul>
+      </article>
+      <article class="card">
+        <h3>The system's part</h3>
+        <ul class="muted"><li>Illuminates patterns</li><li>Maps consequences</li><li>Surfaces tradeoffs</li><li>Maintains transparency</li><li>Serves, never rules</li></ul>
+      </article>
+    </div>
+    <p class="signature">“You plan. Allah plans. And Allah is the best of planners.”</p>
+  </section>
+
+  <section class="section">
+    <h2>Clearer thinking starts with the next step.</h2>
+    <p class="muted">No overwhelm. No gatekeeping. Just practical clarity.</p>
+    <div class="actions">
+      <a class="button primary" href="/try">Try ARTIore</a>
+      <a class="button ghost" href="/donate">Support ARTIore</a>
+      <a class="button ghost" href="/philosophy">Our charter</a>
+    </div>
+    <p class="signature">See what the world doesn't show you.</p>
+  </section>
+</Base>

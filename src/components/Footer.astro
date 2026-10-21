@@ -1,0 +1,47 @@
+---
+import { SIGNATURE, TAGLINE, connectLinks, footerColumns } from "../data/site.js";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      {
+        footerColumns.map((column) => (
+          <section>
+            <h2>{column.heading}</h2>
+            <ul>
+              {column.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+    <section class="footer-connect">
+      <h2>Connect</h2>
+      <ul>
+        {
+          connectLinks.map((link) => (
+            <li>
+              <a href={link.href} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <div class="footer-base">
+      <div>
+        <p>© {year} ARTIORE. All rights reserved.</p>
+        <p>Owned and operated by ARTIORE.</p>
+        <p class="signature">{SIGNATURE}</p>
+      </div>
+      <p class="footer-tagline">{TAGLINE}.</p>
+    </div>
+  </div>
+</footer>
