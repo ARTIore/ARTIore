@@ -1,16 +1,20 @@
-## Hi there 👋
+# ARTIore — Allah Alone is Enough
+**Clarity-first reasoning.** ARTIore helps people understand complex situations, make grounded decisions, and take practical next steps — without overwhelm, gatekeeping, or false certainty.
 
-<!--
-**ARTIore/ARTIore** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Every response maps five things: **Evidence · Assumptions · Trade-offs · Practical next steps · Limits.**
+*The system is a witness, not a verdict.*
 
-Here are some ideas to get you started:
+### Ecosystem
+- 🌐 [artiore.com](https://artiore.com) — the reasoning platform ([try it](https://artiore.com/try))
+- ⚙️ [artiais.com](https://artiais.com) — Artiais, AI infrastructure platform
+- 🤝 [artioreconsortium.com](https://artioreconsortium.com) — Artiore Consortium, collaborative network
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Projects
+- 🎧 [Eternia Aurora Sovereign Engine](https://artiais.com/eternia-aurofa-soverign-engine/) — a local-first generative ambient instrument in your browser
+- 📜 [Grand Directional Prompt Framework V1.1](https://artiais.com/framework.html)
+- 🧭 [Artiore.github.io](https://github.com/ARTIore/Artiore.github.io) — source for artiais.com
+
+### Connect
+[X](https://x.com/Artiore) · [LinkedIn](https://www.linkedin.com/company/artiore/) · [Discord](https://discord.gg/ZTFDuuAmB) · artiste@artiore.com
+
+*No magic in the system. Restraint is real power.*
