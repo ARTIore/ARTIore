@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Support ARTIore — Fund Clarity-First Reasoning";
+const description =
+  "Donate to help ARTIore keep building tools that prioritize clarity, restraint, and human judgment over false certainty.";
+---
+
+<Base title={title} description={description} path="/donate">
+  <header class="hero">
+    <p class="eyebrow">Support the mission</p>
+    <h1>Help fund practical clarity</h1>
+    <p class="lede">
+      They built systems you were never meant to understand. Invisible layers. Hidden patterns. Decisions shaping your reality without your awareness. Artiore changes that.
+    </p>
+    <p class="muted">This isn't just AI. It's awareness. If you believe in building tools that help people see clearly, support the mission.</p>
+    <p class="muted">Your donation helps Artiore keep building, publishing, and protecting. Donate. Share. Stand with us.</p>
+  </header>
+
+  <section class="section">
+    <h2>Choose your method</h2>
+    <p class="muted">Choose the method that works best for you. Please double-check wallet addresses and network selection before sending. Digital asset transfers are generally irreversible.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Bitcoin (BTC)</h3>
+        <p class="note">BTC network</p>
+        <p class="muted">Send support using the Bitcoin network. Please confirm the network before sending.</p>
+        <p class="note">Wallet address</p>
+        <code class="address">bc1qlc5v4hef65f6s69cwwhl2aqw5950000kjyjdxj64s6fx2wtddefqp70x86</code>
+      </article>
+      <article class="card">
+        <h3>Ethereum (ETH)</h3>
+        <p class="note">ETH network</p>
+        <p class="muted">Send support using the Ethereum network. Please confirm the network before sending.</p>
+        <p class="note">Wallet address</p>
+        <code class="address">0x00a406d54cA23978AA74e42463eF2b34Eb3B3Ee5</code>
+      </article>
+      <article class="card">
+        <h3>PayPal</h3>
+        <p class="note">Quick support option</p>
+        <p class="muted">Use PayPal for a simple direct contribution. PayPal's own policy applies to that payment.</p>
+        <p><a class="button primary" href="https://www.paypal.me/artiore" rel="noopener noreferrer">Open PayPal</a></p>
+      </article>
+    </div>
+  </section>
+</Base>

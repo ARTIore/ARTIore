@@ -1,0 +1,220 @@
+---
+import { FIVE_PART } from "../data/site.js";
+
+const endpoint = import.meta.env.PUBLIC_ANALYZE_URL || "/api/artiore/analyze";
+const examples = [
+  {
+    label: "Career decision",
+    text: "I have two job offers. One pays more but requires relocation. The other is local but slower growth. How should I think through this?",
+  },
+  {
+    label: "Business strategy",
+    text: "I'm considering launching a new product line. What evidence and trade-offs should I map before deciding?",
+  },
+  {
+    label: "Personal dilemma",
+    text: "I'm feeling stuck between two important commitments. Help me think through the trade-offs clearly.",
+  },
+  {
+    label: "Risk assessment",
+    text: "I'm thinking about investing a significant amount in a new venture. What assumptions and limits should I examine?",
+  },
+];
+---
+
+<section class="try-tool" aria-labelledby="try-heading">
+  <p class="eyebrow">Clarity-first reasoning</p>
+  <h1 id="try-heading">What do you need to think through?</h1>
+  <p class="lede">
+    Structured reasoning that maps evidence, trade-offs, and options — without false certainty. Final judgment stays with you.
+  </p>
+  <p>{FIVE_PART}</p>
+
+  <form id="analyze-form" data-endpoint={endpoint}>
+    <fieldset class="modes">
+      <legend class="eyebrow">Mode</legend>
+      <label class="mode">
+        <input type="radio" name="mode" value="clarity" checked />
+        <span>
+          <strong>Clarity Mode</strong>
+          <small>Maps evidence, assumptions, trade-offs, and limits. Structured reasoning without false certainty.</small>
+        </span>
+      </label>
+      <label class="mode">
+        <input type="radio" name="mode" value="executive" />
+        <span>
+          <strong>Executive Mode</strong>
+          <small>The same five parts, written short for someone who has to choose.</small>
+        </span>
+      </label>
+    </fieldset>
+
+    <p class="eyebrow" id="examples-label">Try an example</p>
+    <ul class="examples" aria-labelledby="examples-label">
+      {
+        examples.map((example) => (
+          <li>
+            <button type="button" data-example={example.text}>
+              {example.label}
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="field">
+      <label for="situation">Describe your situation</label>
+      <textarea
+        id="situation"
+        name="question"
+        maxlength="2000"
+        required
+        placeholder="Describe your situation in detail for the most useful analysis."
+        aria-describedby="situation-hint char-count"></textarea>
+      <div class="counter">
+        <span id="situation-hint">Up to 2,000 characters. Enter adds a new line.</span>
+        <span id="char-count">0/2000</span>
+      </div>
+    </div>
+    <button class="analyze" id="analyze" type="submit">Analyze</button>
+  </form>
+
+  <div id="result" class="result" aria-live="polite"></div>
+  <p class="note">No magic in the system. What you submit is sent to produce this response and is not stored by ARTIore. <a href="/privacy">Privacy</a>.</p>
+  <noscript>
+    <p>Analyzing a situation on this page needs JavaScript. The rest of the site works without it.</p>
+  </noscript>
+</section>
+
+<script>
+  const form = document.querySelector("#analyze-form");
+  if (form instanceof HTMLFormElement) {
+    const endpoint = form.dataset.endpoint || "/api/artiore/analyze";
+    const question = document.querySelector("#situation");
+    const count = document.querySelector("#char-count");
+    const result = document.querySelector("#result");
+    const submit = document.querySelector("#analyze");
+    if (
+      question instanceof HTMLTextAreaElement &&
+      count &&
+      result &&
+      submit instanceof HTMLButtonElement
+    ) {
+      const updateCount = () => {
+        count.textContent = `${question.value.length}/2000`;
+      };
+      question.addEventListener("input", updateCount);
+
+      document.querySelectorAll("[data-example]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          question.value = button.dataset.example || "";
+          updateCount();
+          question.focus();
+        });
+      });
+
+      const section = (key: string, label: string, sub: string, text: string) => {
+        const block = document.createElement("div");
+        block.className = `response-block ${key}`;
+        const heading = document.createElement("h3");
+        heading.textContent = label;
+        const note = document.createElement("p");
+        note.className = "sub";
+        note.textContent = sub;
+        const body = document.createElement("p");
+        body.textContent = text;
+        block.append(heading, note, body);
+        return block;
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const modeInput = form.querySelector('input[name="mode"]:checked');
+        const mode = modeInput instanceof HTMLInputElement ? modeInput.value : "clarity";
+        const text = question.value.trim();
+        result.replaceChildren();
+        if (!text) {
+          const error = document.createElement("p");
+          error.className = "error";
+          error.setAttribute("role", "alert");
+          error.textContent = "A question is required.";
+          result.append(error);
+          return;
+        }
+        submit.disabled = true;
+        submit.textContent = "Reasoning…";
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ question: text, mode }),
+          });
+          const data = await response.json();
+          if (!response.ok || data.error) {
+            const error = document.createElement("p");
+            error.className = "error";
+            error.setAttribute("role", "alert");
+            error.textContent = data.error || "Something went wrong. Please try again.";
+            result.append(error);
+            return;
+          }
+          const card = document.createElement("article");
+          card.className = "card";
+          const head = document.createElement("div");
+          head.className = "result-head";
+          const modeLabel = document.createElement("p");
+          modeLabel.className = "eyebrow";
+          modeLabel.style.margin = "0";
+          modeLabel.textContent = data.mode === "executive" ? "Executive Mode" : "Clarity Mode";
+          const badge = document.createElement("p");
+          badge.className = `badge ${data.confidenceLevel || "Low"}`;
+          badge.textContent = `${data.confidenceLevel || "Low"} confidence`;
+          head.append(modeLabel, badge);
+          card.append(
+            head,
+            section("evidence", "Evidence", "What we know", data.evidence || ""),
+            section("assumptions", "Assumptions", "What we're assuming", data.assumptions || ""),
+            section("tradeoffs", "Trade-offs", "What you're weighing", data.tradeoffs || ""),
+          );
+          const stepsWrap = document.createElement("div");
+          stepsWrap.className = "response-block";
+          const stepsHeading = document.createElement("h3");
+          stepsHeading.textContent = "Practical next steps";
+          const stepsSub = document.createElement("p");
+          stepsSub.className = "sub";
+          stepsSub.textContent = "Options you can act on";
+          const list = document.createElement("ol");
+          list.className = "steps";
+          (Array.isArray(data.nextSteps) ? data.nextSteps : []).forEach((step: unknown, index: number) => {
+            const item = document.createElement("li");
+            const n = document.createElement("span");
+            n.textContent = String(index + 1);
+            const copy = document.createElement("p");
+            copy.style.margin = "0";
+            copy.textContent = String(step);
+            item.append(n, copy);
+            list.append(item);
+          });
+          stepsWrap.append(stepsHeading, stepsSub, list);
+          card.append(stepsWrap, section("limits", "Limits", "What we don't know", data.limits || ""));
+          const witness = document.createElement("p");
+          witness.className = "note";
+          witness.textContent = "No magic in the system. The system is a witness, not a verdict.";
+          card.append(witness);
+          result.append(card);
+        } catch {
+          const error = document.createElement("p");
+          error.className = "error";
+          error.setAttribute("role", "alert");
+          error.textContent = "Network error. Please check your connection and try again.";
+          result.append(error);
+        } finally {
+          submit.disabled = false;
+          submit.textContent = "Analyze";
+          submit.focus();
+        }
+      });
+    }
+  }
+</script>

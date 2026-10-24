@@ -1,0 +1,76 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Privacy Policy — ARTIore";
+const description =
+  "Draft privacy policy for this rebuilt ARTIore site: submitted text is sent to OpenAI for a response and is not stored here. No analytics and no tracking cookies.";
+---
+
+<Base title={title} description={description} path="/privacy">
+  <article class="prose">
+    <p class="banner">
+      <strong>Draft for owner review — 21 October 2026.</strong> This text describes the rebuilt site in this repository, not the previous GoDaddy site. It is not legal advice. Please review it, especially the company details carried over from the previous policy, before publishing it as the live policy.
+    </p>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 21 October 2026</p>
+    <p>
+      The Secret Affaire Inc. ("Company", "we", "us", or "our"), described in the previous policy as a private limited corporation registered in Canada, operates the ARTIore website at artiore.com. This draft explains what this rebuilt website actually does with information.
+    </p>
+    <p>
+      Contact: Zain Ul Abdin, The Secret Affaire Inc. Phone: <a href="tel:+16478093075">+1 (647) 809-3075</a>. Email: <a href="mailto:contact@artiore.com">contact@artiore.com</a>. The public contact address used in the site footer is <a href="mailto:artiste@artiore.com">artiste@artiore.com</a>.
+    </p>
+
+    <h2>What this site does</h2>
+    <ul>
+      <li>Pages are static. There are no accounts and no user database.</li>
+      <li>We do not run third-party analytics, advertising, or a chat widget. We do not set tracking cookies.</li>
+      <li>The reasoning tool at <a href="/try">/try</a> is the only page that sends what you type to a server.</li>
+    </ul>
+
+    <h2>The reasoning tool and OpenAI</h2>
+    <p>
+      When you press Analyze, the text you typed (up to 2,000 characters) and the mode you chose (Clarity or Executive) are sent to our server. The server sends that text to OpenAI so it can return the structured response: Evidence, Assumptions, Trade-offs, Practical next steps, Limits, and a confidence level.
+    </p>
+    <p>
+      We do not write the question or the response to a database. A rate limit may hold your IP address in the memory of the server handling the request, and that memory is not a permanent record. OpenAI processes the text under its own policy: <a href="https://openai.com/privacy">https://openai.com/privacy</a>. The model named in the previous policy was GPT-5.2; the operator can set the model with the <code>OPENAI_MODEL</code> secret.
+    </p>
+    <p>You can use the rest of the site without using the reasoning tool.</p>
+
+    <h2>Hosting logs</h2>
+    <p>
+      The site is designed to be hosted on Cloudflare. Cloudflare may keep ordinary connection logs (such as IP address, user agent, URL, and time) to operate the network. We do not use those logs to build profiles, and this site does not add its own analytics on top of them.
+    </p>
+
+    <h2>Donations</h2>
+    <p>
+      Bitcoin and Ethereum addresses are shown on the donate page. Those networks are public. PayPal donations go to PayPal at paypal.me/artiore; PayPal's policy applies, and we do not receive card numbers through this site.
+    </p>
+
+    <h2>Email</h2>
+    <p>
+      If you email us, we receive whatever you include. Access requests are not stored by a form on this site. Send them to <a href="mailto:contact@artiore.com">contact@artiore.com</a>.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      The site is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has sent us personal information, contact us at the phone number or email above.
+    </p>
+
+    <h2>International visitors</h2>
+    <p>
+      The company address in the previous policy is in Canada. The site can be opened from other countries. Text sent for a reasoning response is processed by OpenAI, which may process data outside your country. See OpenAI's policy for that transfer.
+    </p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li>Don't use the reasoning tool if you don't want the text sent to OpenAI.</li>
+      <li>We have no account profile to access, correct, or delete, because we don't keep one.</li>
+      <li>Questions about this draft: <a href="mailto:contact@artiore.com">contact@artiore.com</a> or +1 (647) 809-3075.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>
+      If this policy changes, the date at the top will change. If collection starts that this draft does not describe, that change should be written here before it happens.
+    </p>
+  </article>
+</Base>

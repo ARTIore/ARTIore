@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+function formatDate(iso: string) {
+  const [year, month, day] = iso.slice(0, 10).split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+const title = "ARTIore Blog — Clarity, Reasoning & Decisions";
+const description =
+  "Articles on structured thinking, decision frameworks, and using AI for clarity without false certainty or overclaim.";
+---
+
+<Base title={title} description={description} path="/blog">
+  <header class="hero">
+    <p class="eyebrow">Blog</p>
+    <h1>Clarity, reasoning, and decisions</h1>
+    <p class="lede">Articles on structured thinking and on using a reasoning tool without false certainty.</p>
+  </header>
+  <ul class="grid blog-list">
+    {
+      posts.map((post) => (
+        <li class="card">
+          <p class="note">{formatDate(post.data.date)}{post.data.category ? ` · ${post.data.category}` : ""}</p>
+          <h2><a href={`/blog/${post.id}`}>{post.data.title}</a></h2>
+          <p class="muted">{post.data.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

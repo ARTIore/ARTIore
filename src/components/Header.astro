@@ -1,0 +1,51 @@
+---
+import { ARABIC_TAGLINE, TAGLINE, foundations, mainNav } from "../data/site.js";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const current = (href: string) => (path === href ? "page" : undefined);
+---
+
+<div class="topbar">
+  <p class="arabic" lang="ar" dir="rtl">{ARABIC_TAGLINE}</p>
+  <p>{TAGLINE}</p>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">
+      <img src="/images/logo.webp" width="32" height="48" alt="" />
+      <span>ARTIore</span>
+    </a>
+    <details class="nav-details">
+      <summary aria-label="Open menu">Menu</summary>
+      <nav class="nav-panel" aria-label="Primary">
+        <ul class="nav-list">
+          {
+            mainNav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={current(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <details class="foundations">
+              <summary class="foundations-summary">Foundations</summary>
+              <ul class="foundation-list">
+                {
+                  foundations.map((item) => (
+                    <li>
+                      <a href={item.href} aria-current={current(item.href)}>
+                        {item.label}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import TryTool from "../components/TryTool.astro";
+
+const title = "Try ARTIore — Structured Reasoning Tool";
+const description =
+  "Ask anything. Get evidence, assumptions, trade-offs, and practical next steps in Clarity Mode or Executive Mode. No magic — you decide.";
+---
+
+<Base title={title} description={description} path="/try">
+  <TryTool />
+  <section class="section try-tool">
+    <h2>Find this useful?</h2>
+    <p class="muted">Artiore is built to help people think clearly. If it helped you, consider supporting the mission.</p>
+    <div class="actions">
+      <a class="button primary" href="/donate">Support Artiore</a>
+      <a class="button ghost" href="/framework">How it works</a>
+    </div>
+    <p class="signature">Allah Alone is Enough.</p>
+  </section>
+</Base>
