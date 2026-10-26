@@ -11,13 +11,14 @@ Last Updated: April 16, 2026
 
 ## 1. Agreement to Terms
 
-These Terms of Service ("Terms") constitute a legally binding agreement between you and The Secret Affaire Inc., a private limited corporation registered in Canada ("Company", "we", "us", or "our"), concerning your access to and use of the Artiore website (artiore.com) and any related services (collectively, the "Service").
+These Terms of Service ("Terms") constitute a legally binding agreement between you and The Secret Affaire Inc., a private limited corporation registered in Canada and Oregon ("Company", "we", "us", or "our"), concerning your access to and use of the Artiore website (artiore.com) and any related services (collectively, the "Service").
 
 By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Service.
 
 **Contact Information:**
 The Secret Affaire Inc.
 Zain Ul Abdin
+9780-129 Street, Surrey, British Columbia, Canada
 Email: artiore@outlook.com
 
 ## 2. Description of Service
@@ -157,6 +158,8 @@ If you have any questions about these Terms, please contact us:
 The Secret Affaire Inc.
 
 Zain Ul Abdin
+
+9780-129 Street, Surrey, British Columbia, Canada
 
 Email: artiore@outlook.com
 
