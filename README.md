@@ -7,7 +7,7 @@ Every response maps five things: **Evidence · Assumptions · Trade-offs · Prac
 ### Ecosystem
 - 🌐 [artiore.com](https://artiore.com) — the reasoning platform ([try it](https://artiore.com/try))
 - ⚙️ [artiais.com](https://artiais.com) — Artiais, AI infrastructure platform
-- 🤝 [artioreconsortium.com](https://artioreconsortium.com) — Artiore Consortium, collaborative network
+- 🤝 [Instagram · artiore.consortium](https://instagram.com/artiore.consortium) — Artiore Consortium, collaborative network
 
 ### Projects
 - 🎧 [Eternia Aurora Sovereign Engine](https://artiais.com/eternia-aurofa-soverign-engine/) — a local-first generative ambient instrument in your browser
@@ -15,6 +15,6 @@ Every response maps five things: **Evidence · Assumptions · Trade-offs · Prac
 - 🧭 [Artiore.github.io](https://github.com/ARTIore/Artiore.github.io) — source for artiais.com
 
 ### Connect
-[X](https://x.com/Artiore) · [LinkedIn](https://www.linkedin.com/company/artiore/) · [Discord](https://discord.gg/ZTFDuuAmB) · artiste@artiore.com
+[X](https://x.com/Artiore) · [LinkedIn](https://www.linkedin.com/company/artiore/) · [Discord](https://discord.gg/ZTFDuuAmB) · [Instagram](https://instagram.com/artiore.consortium) · artiore@outlook.com
 
 *No magic in the system. Restraint is real power.*
