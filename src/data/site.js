@@ -75,9 +75,10 @@ export const footerColumns = [
 ];
 
 export const connectLinks = [
-  { href: "mailto:artiste@artiore.com", label: "Email" },
+  { href: "mailto:artiore@outlook.com", label: "Email" },
   { href: "https://discord.gg/ZTFDuuAmB", label: "Discord" },
-  { href: "https://wa.me/16478093075", label: "WhatsApp" },
+  { href: "https://instagram.com/artiore.consortium", label: "Instagram" },
+  { href: "https://instagram.com/mypapabigger", label: "Instagram (second)" },
   { href: "https://www.linkedin.com/company/artiore/", label: "LinkedIn" },
   { href: "https://x.com/Artiore", label: "X" },
 ];

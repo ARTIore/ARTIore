@@ -65,7 +65,7 @@ Zain built Artiore to help people think more clearly under complexity. He works 
 
 Before Artiore, he worked on technology systems, strategic operations, and human-centered design. He believes AI should empower people, not replace them.
 
-[Email](mailto:artiste@artiore.com)
+[Email](mailto:artiore@outlook.com)
 
 [LinkedIn](https://linkedin.com/in/zain-ul-abdin-artiore)
 

@@ -87,7 +87,7 @@ Artiore holds no authority. Final judgment belongs to you.
 
 This site does not store access requests. The reasoning tool is already open at [Try ARTIore](/try).
 
-If you want to go deeper — the protocol, the doctrine, or a conversation about how you intend to use it — email [contact@artiore.com](mailto:contact@artiore.com?subject=ARTIore%20access%20request). Include your name and how you intend to use ARTIore. Company, role, and domain are optional.
+If you want to go deeper — the protocol, the doctrine, or a conversation about how you intend to use it — email [artiore@outlook.com](mailto:artiore@outlook.com?subject=ARTIore%20access%20request). Include your name and how you intend to use ARTIore. Company, role, and domain are optional.
 
 There is no spam and no sales cycle. The email is context, not a filter.
 

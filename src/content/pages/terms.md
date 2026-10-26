@@ -18,8 +18,7 @@ By accessing or using the Service, you agree to be bound by these Terms. If you 
 **Contact Information:**
 The Secret Affaire Inc.
 Zain Ul Abdin
-Phone: +1 (647) 809-3075
-Email: contact@artiore.com
+Email: artiore@outlook.com
 
 ## 2. Description of Service
 
@@ -139,7 +138,7 @@ Our Service includes 19+ accessibility features designed to support users with:
 - Photosensitivity
 - Vestibular disorders
 
-We strive to conform to WCAG 2.1 Level AAA standards. If you experience any difficulty accessing any part of our Service, please contact us at +1 (647) 809-3075 or contact@artiore.com.
+We strive to conform to WCAG 2.1 Level AAA standards. If you experience any difficulty accessing any part of our Service, please contact us at [artiore@outlook.com](mailto:artiore@outlook.com).
 
 ## 16. Islamic Content Disclaimer
 
@@ -159,8 +158,6 @@ The Secret Affaire Inc.
 
 Zain Ul Abdin
 
-Phone: +1 (647) 809-3075
-
-Email: contact@artiore.com
+Email: artiore@outlook.com
 
 Website: artiore.com

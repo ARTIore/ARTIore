@@ -140,7 +140,7 @@ Main navigation: Try, How it works, Use cases, Blog, About, Donate. Doctrine, Ph
 - The language menu and the accessibility toolbar were not rebuilt. Page bodies were English. A small set of translated chrome strings existed; full translations of the essays did not.
 - Related-reading links on a few security essays pointed at `/blog/password-managers`, `/blog/two-factor-authentication`, and `/blog/software-updates`. Those titles are in the old JavaScript, but no essay body was published and they are not in the sitemap. The links now go to published essays. `/blog/doctrine-foundation` and `/blog/public-wifi-security` redirect to the published posts with those subjects.
 - The chat widget and analytics cookies are gone.
-- `POST /api/access/request` used to accept a name and email. This site does not store that. The access page asks people to email contact@artiore.com.
+- `POST /api/access/request` used to accept a name and email. This site does not store that. The access page asks people to email artiore@outlook.com.
 - `/chatbot-config` and `/export` were builder screens, not in the sitemap, and are not included.
 - The framework still describes an Archives layer that would preserve sessions. This site does not store sessions. The privacy draft says so.
 - Case-study figures (costs, percentages) are copied from the previous page. They were not remeasured.
@@ -148,4 +148,4 @@ Main navigation: Try, How it works, Use cases, Blog, About, Donate. Doctrine, Ph
 
 ## Related
 
-From the previous repository README: [artiais.com](https://artiais.com), [artioreconsortium.com](https://artioreconsortium.com), [X](https://x.com/Artiore), [LinkedIn](https://www.linkedin.com/company/artiore/), [Discord](https://discord.gg/ZTFDuuAmB), artiste@artiore.com.
+From the previous repository README: [artiais.com](https://artiais.com), [instagram.com/artiore.consortium](https://instagram.com/artiore.consortium), [X](https://x.com/Artiore), [LinkedIn](https://www.linkedin.com/company/artiore/), [Discord](https://discord.gg/ZTFDuuAmB), artiore@outlook.com.

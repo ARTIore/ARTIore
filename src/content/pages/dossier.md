@@ -259,7 +259,7 @@ Intelligence for those who refuse to stay unaware.
 
 [Contact](/access)
 
-[@ArtioreConsortium](https://instagram.com/ArtioreConsortium)
+[@artiore.consortium](https://instagram.com/artiore.consortium)
 
 [X · Artiore](https://x.com/Artiore)
 

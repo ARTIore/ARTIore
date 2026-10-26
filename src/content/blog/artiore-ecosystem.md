@@ -182,7 +182,7 @@ Explore the API, contribute to open standards, or build on the infrastructure.
 
 Join the Consortium to advance clarity-first reasoning and ethical AI development.
 
-**Connect:** [artioreconsortium.com](https://artioreconsortium.com)
+**Connect:** [artiore.consortium](https://instagram.com/artiore.consortium)
 
 ## The Bottom Line
 
@@ -198,7 +198,7 @@ Artiore isn't just a product—it's part of an ecosystem dedicated to helping pe
 - **[Network Overview](/network)** - Detailed ecosystem information
 - **[About Artiore](/about)** - Our story and principles
 - **[Artiais](https://artiais.com)** - AI infrastructure platform
-- **[Artiore Consortium](https://artioreconsortium.com)** - Collaborative network
+- **[Artiore Consortium](https://instagram.com/artiore.consortium)** - Collaborative network
 
 ---
 
